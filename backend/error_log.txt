@@ -1,0 +1,48 @@
+Error during prediction:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\Rayan\anaconda3\envs\pretrained_detect\Lib\site-packages\joblib\externals\loky\process_executor.py", line 453, in _process_worker
+    call_item = call_queue.get(block=True, timeout=timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rayan\anaconda3\envs\pretrained_detect\Lib\multiprocessing\queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rayan\Desktop\Main Project\Code\Pretrained detection\sol\nnunetv2\dataset_conversion\kaggle_2025_rsna\official_data_to_nnunet.py", line 5, in <module>
+    import SimpleITK as sitk
+  File "C:\Users\Rayan\anaconda3\envs\pretrained_detect\Lib\site-packages\SimpleITK\__init__.py", line 18, in <module>
+    from SimpleITK.SimpleITK import *
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rayan\Desktop\Main Project\Code\Pretrained detection\backend\inference.py", line 175, in predict
+    image_sitk = process_series(dicom_folder) # We need the full image first
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rayan\Desktop\Main Project\Code\Pretrained detection\sol\nnunetv2\dataset_conversion\kaggle_2025_rsna\official_data_to_nnunet.py", line 158, in process_series
+    metas = Parallel(n_jobs=n_jobs)(
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rayan\anaconda3\envs\pretrained_detect\Lib\site-packages\joblib\parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "C:\Users\Rayan\anaconda3\envs\pretrained_detect\Lib\site-packages\joblib\parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "C:\Users\Rayan\anaconda3\envs\pretrained_detect\Lib\site-packages\joblib\parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "C:\Users\Rayan\anaconda3\envs\pretrained_detect\Lib\site-packages\joblib\parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "C:\Users\Rayan\anaconda3\envs\pretrained_detect\Lib\site-packages\joblib\parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rayan\anaconda3\envs\pretrained_detect\Lib\site-packages\joblib\parallel.py", line 773, in _return_or_raise
+    raise self._result
+joblib.externals.loky.process_executor.BrokenProcessPool: A task has failed to un-serialize. Please ensure that the arguments of the function are all picklable.
+
