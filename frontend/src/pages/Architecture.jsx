@@ -402,9 +402,9 @@ const ModulesDeck = () => {
                 {
                     header: "Input Pipeline",
                     items: [
+                        "Multi-Modality Support (CTA, MRA, MRI)",
                         "Parallel DICOM Reading (Joblib Multi-processing)",
-                        "RAS Orientation Standardization (SimpleITK)",
-                        "Hounsfield Unit (HU) Intensity Normalization"
+                        "RAS Orientation Standardization (SimpleITK)"
                     ]
                 },
                 {
