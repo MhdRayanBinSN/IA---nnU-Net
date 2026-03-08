@@ -41,6 +41,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# ── Modular routers ───────────────────────────────────────────
+from dataset_router import router as dataset_router
+app.include_router(dataset_router)
+# ─────────────────────────────────────────────────────────────
+
+
 
 # Pydantic models
 class PredictionResult(BaseModel):

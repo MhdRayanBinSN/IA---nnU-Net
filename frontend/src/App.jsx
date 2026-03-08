@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Analysis from './pages/Analysis'
 import Results from './pages/Results'
 import Architecture from './pages/Architecture'
+import Dataset from './pages/Dataset'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -41,6 +42,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/analysis" element={<Analysis />} />
               <Route path="/architecture" element={<Architecture />} />
+              <Route path="/dataset" element={<Dataset />} />
               <Route path="/results/:id" element={<Results />} />
             </Routes>
           </AnimatePresence>

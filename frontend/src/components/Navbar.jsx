@@ -7,6 +7,7 @@ import clsx from 'clsx'
 const navItems = [
   { name: 'Project Overview', path: '/' },
   { name: 'Architecture', path: '/architecture' },
+  { name: 'Dataset', path: '/dataset' },
   { name: 'New Analysis', path: '/analysis' },
 ]
 
